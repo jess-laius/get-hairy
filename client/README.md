@@ -1,0 +1,1 @@
+This project provides a portal for individuals interested in signing up for bead and mustache competions.
