@@ -26,3 +26,16 @@ h1 {
     color: coral;
     display: inline-block;
 }
+
+.footer {
+    display: flex;
+    justify-content: center;
+    height: 13px;
+    font-size: 10px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #efdfef;
+    z-index: 300;
+}
