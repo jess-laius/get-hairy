@@ -1,0 +1,41 @@
+.navbar-wrapper {
+    height: 100px;
+    font-family: 'Merriweather', serif;
+    /* background: linear-gradient(to right, #42275a, #4a2e80, #734b6d); */
+    background: linear-gradient(to right, rgba(66, 39, 90, 0.74), rgba(74, 46, 128, 0.4), rgba(115, 75, 109, 0.83));
+    position: fixed;
+    right: 0;
+    top: 0;
+    left: 0;
+    z-index: 300;
+    padding-top: 5px;
+}
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+.menu li {
+    display: inline;
+}
+
+.hello{
+    margin-top: 100px;
+}
+h1 {
+    color: coral;
+    display: inline-block;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    height: 13px;
+    font-size: 10px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #efdfef;
+    z-index: 300;
+}

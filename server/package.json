@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "https://github.com/bbgrabbag/auth-template",
+  "respository": "https://github.com/jess-laius/get-hairy",
   "keywords": [],
-  "author": "",
+  "author": "stevenfoard",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^1.0.3",
