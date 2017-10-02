@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { Switch, Route, withRouter } from "react-router-dom";
 
 import Navbar from "./Navbar";
@@ -6,6 +6,7 @@ import Home from "./routes/Home";
 import Signup from "./routes/signup/Signup";
 import Login from "./routes/login/Login";
 import About from "./routes/About";
+import ContestsContainer from "./routes/contests/ContestsContainer";
 import Photos from "./routes/photo_gallery/Photos";
 import ProfileComponent from "./routes/profile/ProfileComponent";
 import Footer from "./Footer";
@@ -23,6 +24,7 @@ class App extends Component {
                         <Route exact path="/" component={Home} />
                         <Route path="/signup" component={Signup} />
                         <Route path="/login" component={Login} />
+                        <Route path="/contests" component={ContestsContainer} />
                         <Route path="/photo_gallery" component={Photos} />
                         <Route path="/about" component={About} />
                         <Route path="/profile" component={ProfileComponent} />
