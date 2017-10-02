@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 
-class About extends Component {
+class ContestsComponent extends Component {
     render() {
         return (
             <div>
-                <h1>AT ABOUT</h1>
+                <h1>AT ENTER COMPETITIONS</h1>
             </div>
         );
     }
 }
 
-export default About;
+export default ContestsComponent;

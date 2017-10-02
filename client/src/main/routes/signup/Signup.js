@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import SignupContainer from "./SignupFormcontainer";
 
 class Signup extends Component {
