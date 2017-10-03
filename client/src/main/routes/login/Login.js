@@ -43,7 +43,6 @@ class Login extends Component {
         return (
             <div>
                 <LoginComponent
-                    handleChange={this.handleChange.bind(this)} />
                     handleChange={this.handleChange.bind(this)}
                     handleSubmit={this.handleSubmit.bind(this)}
                     errMsg={this.props.authError.login}

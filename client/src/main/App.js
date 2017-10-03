@@ -37,4 +37,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default withRouter(connect(null, { verifyToken })(App));
