@@ -5,7 +5,8 @@ class Login extends Component {
     render() {
         return (
             <div>
-                <LoginComponent />
+                <LoginComponent
+                    handleChange={this.handleChange.bind(this)} />
             </div>
         );
     }
