@@ -12,7 +12,7 @@ class Navbar extends Component {
                 {this.props.isAuthenticated ? null : <Link to="/login"><li>Login</li></Link>}
                 {!this.props.isAuthenticated ? null : <button onClick={this.props.logout}><li>Logout</li></button>}
                 {!this.props.isAuthenticated ? null : <Link to="/contests"><li>Enter Competition</li></Link>}
-                {!this.props.isAuthenticated ? null : <Link to="/photo_gallery"><li>Photo Gallery</li></Link>}
+                {this.props.isAuthenticated ? null : <Link to="/photo_gallery"><li>Photo Gallery</li></Link>}
                 <Link to="/about"><li>About</li></Link>
                 {!this.props.isAuthenticated ? null : <Link to="/profile"><li>Profile</li></Link>}
                     </ul>
