@@ -36,7 +36,7 @@ export function verifyToken() {
                 dispatch(authenticate(isValid, user));
             })
             .catch((err) => {
-                console.log(err);
+                console.error(err);
                 dispatch(authError({ verify: "Invalid token" }));
             })
     }
@@ -53,15 +53,15 @@ export function signup(credentials) {
                 dispatch(authenticate(isValid, user));
             })
             .catch((err) => {
-                console.log(err);
+                console.error(err);
                 dispatch(authError({ verify: "Invalid username or password!" }));
             })
     }
 }
 
-export function login(password) {
+export function login(credentials) {
     return (dispatch) => {
-        axios.post(authUrl + "login", password)
+        axios.post(authUrl + "login", credentials)
             .then((response) => {
                 let user = response.data.user;
                 let isValid = response.data.success;
