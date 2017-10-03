@@ -17,7 +17,7 @@ class Login extends Component {
     }
     handleChange(event) {
         event.persist();
-        this.state((prevState) => {
+        this.setState((prevState) => {
             return {
                 inputs: {
                     ...prevState.inputs,
@@ -52,4 +52,7 @@ class Login extends Component {
     }
 }
 
-export default Login;
+const mapStateToProps = (state) => {
+    return state;
+}
+export default connect(mapStateToProps, { login })(Login);
