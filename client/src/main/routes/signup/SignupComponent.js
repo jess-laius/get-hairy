@@ -12,7 +12,7 @@ class SignupComponent extends Component {
                         value={this.props.firstName}
                         name="firstName"
                         type="text"
-                        placeholder="" />
+                        placeholder="" /> <br/>
                         <span> Last Name: </span>
                     <input
                         onChange={this.props.lastName}
