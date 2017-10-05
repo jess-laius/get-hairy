@@ -8,7 +8,7 @@ import Home from "./routes/Home";
 import Signup from "./routes/signup/Signup";
 import Login from "./routes/login/Login";
 import About from "./routes/About";
-import ContestsContainer from "./routes/contests/ContestsContainer";
+import Contests from "./routes/contests/Contests";
 import Photos from "./routes/photo_gallery/Photos";
 import ProfileComponent from "./routes/profile/ProfileComponent";
 import Footer from "./Footer";
@@ -25,7 +25,7 @@ class App extends Component {
                         <Route exact path="/" component={Home} />
                         <Route path="/signup" component={Signup} />
                         <Route path="/login" component={Login} />
-                        <ProtectedRoute path="/contests" component={ContestsContainer} />
+                        <ProtectedRoute path="/contests" component={Contests} />
                         <ProtectedRoute path="/photo_gallery" component={Photos} />
                         <Route path="/about" component={About} />
                         <ProtectedRoute path="/profile" component={ProfileComponent} />

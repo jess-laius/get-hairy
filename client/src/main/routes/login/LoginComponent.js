@@ -12,7 +12,7 @@ class LoginComponent extends Component {
                         value={this.props.email}
                         name="email"
                         type="text"
-                        placeholder="use email" />
+                        placeholder="use email" /><br />
                     <span>Password: </span>
                     <input
                         onChange={this.props.handleChange}
@@ -20,9 +20,9 @@ class LoginComponent extends Component {
                         name="password"
                         type="password"
                         placeholder="#" />
-                        <br />
-                        <br />
-                        <button type="submit">Submit</button> 
+                    <br />
+                    <br />
+                    <button type="submit">Submit</button>
                     <p>{this.props.errMsg}</p>
                 </form>
             </div>
