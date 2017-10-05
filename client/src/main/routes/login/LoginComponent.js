@@ -9,10 +9,10 @@ class LoginComponent extends Component {
                     <span>Username: </span>
                     <input
                         onChange={this.props.handleChange}
-                        value={this.props.email}
-                        name="email"
+                        value={this.props.username}
+                        name="username"
                         type="text"
-                        placeholder="use email" />
+                        placeholder="" />
                     <span>Password: </span>
                     <input
                         onChange={this.props.handleChange}
