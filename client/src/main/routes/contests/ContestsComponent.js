@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import ContestItemComponent from "./ContestItemComponent";
+import ItemComponent from "./item/ItemComponent";
 
 class ContestsComponent extends Component {
     genContests() {
         return this.props.contests.map((contest) => {
-            return <ContestItemComponent key={contest._id} contest={contest} id={contest._id} />
+            return <ItemComponent key={contest._id} contest={contest} id={contest._id} />
         })
     }
     render() {

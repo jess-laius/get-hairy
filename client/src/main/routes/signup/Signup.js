@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import {signup} from "../../../redux/actions/index";
+import { signup } from "../../../redux/actions/index";
 import SignupComponent from "./SignupComponent";
 
 class Signup extends Component {
@@ -10,6 +10,8 @@ class Signup extends Component {
             inputs: {
                 firstName: "",
                 lastName: "",
+                username: "",
+                password: "",
                 email: ""
             }
         }
@@ -27,10 +29,13 @@ class Signup extends Component {
     }
     clearInputs() {
         this.setState({
-            inputs: "",
-            firstName: "",
-            lastName: "",
-            email: ""
+            inputs: {
+                firstName: "",
+                lastName: "",
+                username: "",
+                password: "",
+                email: ""
+            }
         })
     }
     handleSubmit(event) {
@@ -54,4 +59,4 @@ class Signup extends Component {
 const mapStateToProps = (state) => {
     return state;
 }
-export default connect(mapStateToProps, {signup})(Signup);
+export default connect(mapStateToProps, { signup })(Signup);

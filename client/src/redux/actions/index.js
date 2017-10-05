@@ -9,7 +9,7 @@ axios.interceptors.request.use((config) => {
     return Promise.reject(err)
 })
 
-const authUrl = "http://localhost:8080/auth";
+const authUrl = "http://localhost:8080/auth/";
 const profileUrl = "http://localhost:8080/profile/";
 
 function authenticate(isValid, user) {
@@ -20,9 +20,10 @@ function authenticate(isValid, user) {
     }
 }
 
-function authError(err) {
+function authError(key, err) {
     return {
         type: "AUTH_ERROR",
+        key,
         err
     }
 }
@@ -53,8 +54,7 @@ export function signup(credentials) {
                 dispatch(authenticate(isValid, user));
             })
             .catch((err) => {
-                console.error(err);
-                dispatch(authError({ verify: "Invalid username or password!" }));
+                dispatch(authError("signup", "Username or email exists, try again!"));
             })
     }
 }
@@ -70,8 +70,7 @@ export function login(credentials) {
                 dispatch(authenticate(isValid, user));
             })
             .catch((err) => {
-                console.error(err);
-                dispatch(authError({ verify: "Invalid username or password!" }));
+                dispatch(authError("login", "Username or password is invalid!! Please try again."));
             })
     }
 }
@@ -84,3 +83,35 @@ export function logout() {
 }
 
 // Load data functions
+const dataUrl = "http://localhosts:8080";
+
+const setData = function (data) {
+    return {
+        type: "SET_DATA",
+        data
+    }
+}
+
+export function loadData() {
+    return (dispatch) => {
+        axios.get(dataUrl)
+            .then((response) => {
+                dispatch(setData(response.data))
+            })
+            .catch((err) => {
+                console.error(err)
+            })
+    }
+}
+
+export function addData(data) {
+    return (dispatch) => {
+        axios.post(dataUrl, data)
+            .then((response) => {
+                dispatch(loadData())
+            })
+            .catch((err) => {
+                console.error(err);
+            })
+    }
+}

@@ -7,19 +7,9 @@ class LoginComponent extends Component {
                 <form onSubmit={this.props.handleSubmit}>
                     <h3>Login into your account</h3>
                     <span>Username: </span>
-                    <input
-                        onChange={this.props.handleChange}
-                        value={this.props.username}
-                        name="username"
-                        type="text"
-                        placeholder="" />
+                    <input onChange={this.props.handleChange} value={this.props.username} name="username" type="text" placeholder="" />
                     <span>Password: </span>
-                    <input
-                        onChange={this.props.handleChange}
-                        value={this.props.password}
-                        name="password"
-                        type="password"
-                        placeholder="#" />
+                    <input onChange={this.props.handleChange} value={this.props.password} name="password" type="password" placeholder="#" />
                     <br />
                     <br />
                     <button type="submit">Submit</button>

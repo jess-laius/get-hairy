@@ -9,7 +9,7 @@ class SignupComponent extends Component {
                     <span>First Name: </span>
                         <input onChange={this.props.handleChange} value={this.props.firstName} name="firstName" type="text" placeholder="" /> <br/>
                     <span> Last Name: </span>
-                        <input onChange={this.props.lastName} value={this.props.lastName} name="lastName" type="text" placeholder="" /> <br />
+                        <input onChange={this.props.handleChange} value={this.props.lastName} name="lastName" type="text" placeholder="" /> <br />
                     <span>Username: </span>
                         <input onChange={this.props.handleChange} value={this.props.username} name="username" type="text" placeholder="required" /> <br />
                     <span>Password: </span>

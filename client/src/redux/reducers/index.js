@@ -3,6 +3,8 @@ let defaultState = {
     user: {
         firstName: "",
         lastName: "",
+        username: "",
+        password: "",
         email: "",
         admin: "",
         _id: ""
@@ -25,6 +27,19 @@ const mainReducer = function (state = defaultState, action) {
                 authError: {
                     ...defaultState.authError
                 }
+            }
+        case "AUTH_ERROR":
+            return {
+                ...state,
+                isAuthenticated: action.isValid,
+                authError: {
+                    ...state.authError,
+                    [action.key]: action.err
+                }
+            }
+        case "LOGOUT":
+            return {
+                ...defaultState
             }
         default:
             return {

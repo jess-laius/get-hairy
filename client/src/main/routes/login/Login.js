@@ -10,7 +10,7 @@ class Login extends Component {
         super();
         this.state = {
             inputs: {
-                email: "",
+                username: "",
                 password: ""
             }
         }
@@ -34,21 +34,20 @@ class Login extends Component {
     clearInputs() {
         this.setState({
             inputs: {
-                email: "",
+                username: "",
                 password: ""
             }
         })
     }
     render() {
         return (
-            <div>
+            this.props.isAuthenticated ? <Redirect to="/profile" /> :
                 <LoginComponent
                     handleChange={this.handleChange.bind(this)}
                     handleSubmit={this.handleSubmit.bind(this)}
                     errMsg={this.props.authError.login}
                     {...this.state.inputs} />
-            </div>
-        );
+        )
     }
 }
 
