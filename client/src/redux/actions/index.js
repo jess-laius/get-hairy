@@ -3,7 +3,7 @@ const axios = require("axios");
 // User authorization
 axios.interceptors.request.use((config) => {
     let token = localStorage.getItem("token");
-    config.headers.Authorization = `Bearer ${"token"}`;
+    config.headers.Authorization = `Bearer ${token}`;
     return config;
 }, (err) => {
     return Promise.reject(err)
@@ -83,7 +83,7 @@ export function logout() {
 }
 
 // Load data functions
-const dataUrl = "http://localhosts:8080";
+const dataUrl = "http://localhost:8080/data";
 
 const setData = function (data) {
     return {
@@ -96,6 +96,7 @@ export function loadData() {
     return (dispatch) => {
         axios.get(dataUrl)
             .then((response) => {
+                console.log(response.data)
                 dispatch(setData(response.data))
             })
             .catch((err) => {

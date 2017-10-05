@@ -41,6 +41,11 @@ const mainReducer = function (state = defaultState, action) {
             return {
                 ...defaultState
             }
+        case "SET_DATA":
+            return {
+                ...state,
+                data: action.data
+            }    
         default:
             return {
                 ...state

@@ -6,12 +6,12 @@ import ContestsComponent from "./ContestsComponent";
 class Contests extends Component {
     componentDidMount() {
         this.props.loadData();
-        // this.props.users();
     }
     render() {
+        console.log(this.props)
         return (
             <div>
-                <ContestsComponent contests={this.props.contests} />
+                <ContestsComponent contests={this.props.data} />
             </div>
         );
     }
