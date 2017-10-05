@@ -12,3 +12,4 @@ class Photo extends Component {
 }
 
 export default Photo;
+

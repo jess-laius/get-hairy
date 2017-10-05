@@ -8,9 +8,9 @@ class ProtectedRoute extends Component {
         let path = this.props.path;
         return (
             <div>
-                Route path ={path} render={(props) => {
+                <Route path ={path} render={(props) => {
                     return this.props.isAuthenticated ? <Component {...props} /> : <Redirect to="/login" />
-                }}
+                }} />
             </div>
         );
     }
