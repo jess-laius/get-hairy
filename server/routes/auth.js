@@ -26,7 +26,9 @@ authRoute.use(passport.initialize());
 
 authRoute.route('/signup')
     .post((req, res) => {
-        UserModel.findOne({ username: req.body.username }, (err, user) => {
+        UserModel.findOne({ username: req.body.username })
+            .populate("contests")
+        .exec((err, user) => {
             if (err) {
                 res.status(500).send({
                     success: false,
@@ -60,7 +62,9 @@ authRoute.route('/signup')
     });
 
 authRoute.post('/login', passport.authenticate('local', { session: false }), (req, res) => {
-    UserModel.findOne({ username: req.body.username }, (err, user) => {
+    UserModel.findOne({ username: req.body.username })
+        .populate("contests")
+    .exec((err, user) => {
         if (err) {
             console.error(err);
             res.status(500).send({
