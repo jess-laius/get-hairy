@@ -20,7 +20,7 @@ class App extends Component {
             <div className="container-fluid">
                 <Navbar />
                 <div className="hello">
-                    <h1>Beards and Mustaches</h1>
+                    
                     <Switch>
                         <Route exact path="/" component={Home} />
                         <Route path="/signup" component={Signup} />
