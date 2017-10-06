@@ -7,7 +7,7 @@ const morgan = require('morgan');
 const config = require('./config');
 const authRoute = require('./routes/auth');
 const dataRoute = require('./routes/data');
-const profileRoute = require('./routes/profile');
+const profileRoute = require('./routes/userprofile');
 
 const PORT = config.PORT;
 const app = express();
@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/auth', authRoute);
 app.use('/data', dataRoute);
-app.use('/profile', profileRoute);
+app.use('/userprofile', profileRoute);
 
 mongoose.connect(config.db, () => {
     console.log("CONNECTED ON " + config.db);

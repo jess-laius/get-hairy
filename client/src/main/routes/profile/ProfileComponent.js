@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import UserContests from "./UserContests";
 
 class ProfileComponent extends Component {
     render() {
         return (
             <div>
-                <h1>AT PROFILE</h1>
+                <h5> You are registered for the following competition/s: </h5>
+                <UserContests />
             </div>
         );
     }

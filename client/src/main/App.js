@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Switch, Route, withRouter } from "react-router-dom";
+import { Switch, Route, withRouter, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { verifyToken } from "../redux/actions/index";
 
@@ -15,7 +15,11 @@ import Footer from "./Footer";
 import ProtectedRoute from "./routes/profile/ProtectedRoute";
 
 class App extends Component {
+    componentWillMount() {
+        this.props.verifyToken()
+    }
     render() {
+        const isAuthenticated = this.props.isAuthenticated;
         return (
             <div className="container-fluid">
                 <Navbar />
@@ -23,8 +27,16 @@ class App extends Component {
                     <h1>Beards and Mustaches</h1>
                     <Switch>
                         <Route exact path="/" component={Home} />
-                        <Route path="/signup" component={Signup} />
-                        <Route path="/login" component={Login} />
+                        <Route path="/signup" render={(props) => {
+                            return isAuthenticated ?
+                                <Redirect to="/profile" /> :
+                                <Signup {...props} />
+                        }} />
+                        <Route path="/login" render={(props) => {
+                            return isAuthenticated ?
+                                <Redirect to="/contests" /> :
+                                <Login {...props} />
+                        }} />
                         <ProtectedRoute path="/contests" component={Contests} />
                         <ProtectedRoute path="/photo_gallery" component={Photos} />
                         <Route path="/about" component={About} />
@@ -37,4 +49,7 @@ class App extends Component {
     }
 }
 
-export default withRouter(connect(null, { verifyToken })(App));
+const mapStateToProps = (state) => {
+    return state;
+}
+export default withRouter(connect(mapStateToProps, { verifyToken })(App));

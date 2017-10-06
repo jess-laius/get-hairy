@@ -10,7 +10,7 @@ axios.interceptors.request.use((config) => {
 })
 
 const authUrl = "http://localhost:8080/auth/";
-const profileUrl = "http://localhost:8080/profile/";
+const userprofileUrl = "http://localhost:8080/userprofile/";
 
 function authenticate(isValid, user) {
     return {
@@ -30,7 +30,7 @@ function authError(key, err) {
 
 export function verifyToken() {
     return (dispatch) => {
-        axios.get(profileUrl + "verify")
+        axios.get(userprofileUrl + "verify")
             .then((response) => {
                 let user = response.data.user;
                 let isValid = response.data.success;
@@ -74,6 +74,19 @@ export function login(credentials) {
             })
     }
 }
+
+export function joinContest(id) {
+    return (dispatch) => {
+        axios.put(userprofileUrl + id)
+            .then((response) => {
+                console.log(response.data)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+}
+
 
 export function logout() {
     return (dispatch) => {

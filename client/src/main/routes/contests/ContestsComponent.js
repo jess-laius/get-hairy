@@ -1,16 +1,16 @@
 import React, { Component } from "react";
-import ItemComponent from "./item/ItemComponent";
+import ItemContainer from "./item/ItemContainer";
 
 class ContestsComponent extends Component {
     genContests() {
         return this.props.contests.map((contest) => {
-            return <ItemComponent key={contest._id} contest={contest} id={contest._id} />
+            return <ItemContainer key={contest._id} contest={contest} id={contest._id} />
         })
     }
     render() {
         return (
             <div>
-                <h3>Facial hair contest</h3>
+                <h2>Register for Facial hair contests</h2>
                 {this.genContests() }
             </div>
         );

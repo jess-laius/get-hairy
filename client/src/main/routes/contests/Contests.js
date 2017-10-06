@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import {loadData} from "../../../redux/actions/index";
+import { loadData } from "../../../redux/actions/index";
 import ContestsComponent from "./ContestsComponent";
 
 class Contests extends Component {
@@ -20,5 +20,4 @@ class Contests extends Component {
 const mapStateToProps = (state) => {
     return state
 }
-
 export default connect(mapStateToProps, { loadData })(Contests);

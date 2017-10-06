@@ -6,6 +6,7 @@ let defaultState = {
         username: "",
         password: "",
         email: "",
+        contests: [],
         admin: "",
         _id: ""
     },
@@ -40,7 +41,7 @@ const mainReducer = function (state = defaultState, action) {
         case "LOGOUT":
             return {
                 ...defaultState
-            }
+            }   
         case "SET_DATA":
             return {
                 ...state,
