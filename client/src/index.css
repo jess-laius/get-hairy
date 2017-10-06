@@ -10,34 +10,57 @@
     z-index: 300;
     padding-top: 5px;
 }
+
 .menu {
     list-style: none;
     display: flex;
     justify-content: space-around;
 }
+
 .menu a li {
     display: inline;
     color: white;
 }
 
-.home-img-wrapper{
+.home-img-wrapper {
     display: block;
     z-index: 20;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     /* background: url(http://notrealdomain2.com/newbanner.png) no-repeat; */
-    width: 100%; /* Width of new image */
-    height: 100%; /* Height of new image */
+    width: 100%;
+    /* Width of new image */
+    height: 100%;
+    /* Height of new image */
     /*padding-left: 180px; /*Equal to width of new image */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 60% 40%;
     background-image: url("http://i.dailymail.co.uk/i/pix/2017/09/04/06/43E2C6F100000578-4849844-Isaiah_Webb_came_in_second_in_the_full_beard_freestyle_section-a-78_1504504493043.jpg")
 }
-.hello{
+
+.col-md-3 {
+    height: 550px;
+    margin-bottom: 5px;
+    overflow: hidden;
+}    
+.col-md-3 img {
+    margin: 1px;
+    width: 100%;
+}
+.col-md-3 div {
+    height: 300px;
+}
+.col-md-3 h1 {
+    text-align: center;
+    color: green;
+}
+
+.hello {
     margin-top: 100px;
     height: 600px;
 }
+
 h1 {
     color: coral;
     display: inline-block;
