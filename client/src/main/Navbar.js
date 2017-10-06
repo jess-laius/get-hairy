@@ -30,6 +30,7 @@ class Navbar extends Component {
                         <Link to="/about">About</Link>
                         {!this.props.isAuthenticated ? null : <Link to="/profile">Profile</Link>}
                         </div> */}
+                        <h1>Beards and Mustaches</h1>
                 </div >
             </div >
         );

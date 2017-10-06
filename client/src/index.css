@@ -58,12 +58,15 @@
 
 .hello {
     margin-top: 100px;
+    padding: 25px;
     height: 600px;
 }
 
 h1 {
     color: coral;
     display: inline-block;
+    
+    text-align: center;
 }
 
 .footer {
